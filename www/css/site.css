@@ -1,0 +1,21 @@
+body {background: #ebebeb url(../i/header_bg.png) repeat-x}
+body>div {background: transparent url(../i/footer_bg.png) bottom repeat-x}
+ #wrapper {margin:auto; width: 1023px}
+	header {height: 269px; padding: 130px 0 0 511px; background: transparent url(../i/header.jpg) left no-repeat}
+        header h1 {margin: 0; font-weight: normal; font-size: 48px; line-height: 1em; color: #fff;}
+        header h2 {margin: 40px 0; font-weight: normal; font-size: 16px; color: #d7d7d7;}
+	aside {float: left; width: 260px; padding-top: 200px}
+        nav li {margin-bottom: 20px}
+		nav .active {font-weight: bold}
+	section {margin-left: 280px; min-height: 261px; padding: 85px 0;}
+		section h1:first-child {margin: 0 0 50px 0; color: #0054a6; font-size: 32px; font-weight: normal}
+		section h2 {margin: 50px 0; color: #0054a6; font-size: 21px; font-weight: normal}
+	footer {height: 411px; margin-left: 280px; padding-top: 20px; color: #d7d7d7}
+        footer a:link {color: #d7d7d7}
+        footer a:visited {color: #662d91}
+        footer a:hover {color: #fff}
+		#counter {}
+
+.comment-item {margin-bottom: 32px}
+.comment-item strong {display: block; margin-left: 35px}
+.article-decoration {background-color: #fdebd7}

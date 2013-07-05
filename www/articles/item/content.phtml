@@ -1,0 +1,47 @@
+<h1><?=$form->title->getDisplayValue();?></h1>
+<?
+echo isset($config['items'])
+	? $form->text->value
+	: file_get_contents($site->moduleItemsPath . '/' . $id . '/content.html');
+?>
+<? if (isset($config['comments'])): ?>
+<h2>Подробности и комментарии</h2>
+<? if ($comments): ?>
+	<? foreach ($comments as $comment_params): ?>
+		<p id="comment<?=$comment_params['id'];?>" class="comment-item">
+            <?=$comment_params['text'];?>
+			<strong>
+				<? if (!empty($comment_params['email'])): ?>
+					<a href="mailto:<?=$comment_params['email'];?>"><?=$comment_params['name'];?></a>
+				<? else: ?>
+					<?=$comment_params['name'];?>
+				<? endif; ?>
+			</strong>
+		</p>
+	<? endforeach; ?>
+<? else: ?>
+	<p>Комментариев нет</p>
+<? endif; ?>
+
+<? endif; ?>
+<h2 style="margin-bottom: 0">Комментировать</h2>
+<form name="addcomment" method="post" action="/articles/addcomment/" enctype="multipart/form-data" class="form">
+    <input type="hidden" name="key" value="">
+    <input type="hidden" name="item" value="<?=$id;?>">
+
+    <textarea id="addcomment_text" name="text" rows="10" cols="17" required class="textarea"></textarea>
+    <div class="alert"></div>
+
+
+		Пожалуйста, не забудьте указать своё имя и сферу деятельности компании в конце сообщения.<br>
+        Комментарий может быть откорректирован или отклонен.
+		Размещение может занимать до трех дней.
+		Указанные в&nbsp;комментарии номера телефонов, адреса или фамилии могут быть скрыты.	
+ 
+
+    <button type="submit" class="submit">Отправить</button>
+    <div class="alert"></div>
+</form>
+<p style="display: none">
+	Ваш комментарий принят. Спасибо!
+</p>
